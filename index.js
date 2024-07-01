@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 //se añade el middleware para parsear el cuerpo JSON de las solicitudes
 app.use(express.json())
 
-//manejo de error 404
+//middleware de manejo de error 404
 app.use((req, res, next) => {
     res.status(404).send('Página no encontrada');
 });
