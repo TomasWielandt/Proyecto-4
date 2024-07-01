@@ -37,7 +37,7 @@ exports.obtenerReservas = (req, res) => {
     res.json(result);
 };
 
-//se crea y exporta la función obtenerRerserva
+//se crea y exporta la función obtenerReserva
 exports.obtenerReserva = (req, res) => {
     const reserva = reservas.find(r => r.id === parseInt(req.params.id));
 
@@ -58,7 +58,7 @@ exports.actualizarReserva = (req, res) => {
     if (!reserva) return res.status(404).send('Reserva no encontrada');
 
     //actualización de los campos de la reserva
-    const { hotel, fechaInicio, fechaFin tipoHabitacion, estado, numHuespedes } = req.body;
+    const { hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes } = req.body;
     reserva.hotel = hotel || reserva.hotel;
     reserva.fechaInicio = fechaInicio || reserva.fechaInicio;
     reserva.fechaFin = fechaFin || reserva.fechaFin;
