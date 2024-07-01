@@ -31,7 +31,7 @@ exports.obtenerReservas = (req, res) => {
     if (fecha_inicio && fecha_fin) result = result.filter(r => r.fechaInicio >= fecha_inicio && r.fechaFin <= fecha_fin);
     if (tipo_habitacion) result = result.filter(r => r.tipoHabitacion === tipo_habitacion);
     if (estado) result = result.filter(r => r.estado === estado);
-    if (num_huespedes) result = result.filter(r => r.numHuespedes === num_huespedes);
+    if (num_huespedes) result = result.filter(r => r.numHuespedes === parseInt(num_huespedes));
 
     //respuesta al cliente de reservas filtradas en formato json
     res.json(result);
