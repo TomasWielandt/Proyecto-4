@@ -33,6 +33,11 @@ exports.obtenerReservas = (req, res) => {
     if (estado) result = result.filter(r => r.estado === estado);
     if (num_huespedes) result = result.filter(r => r.numHuespedes === parseInt(num_huespedes));
 
+    // si no se encuentra ninguna reserva, enviar respuesta 404
+    if (result.length === 0) {
+        return res.status(404).send('Reserva no encontrada');
+    }
+
     //respuesta al cliente de reservas filtradas en formato json
     res.json(result);
 };
