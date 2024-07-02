@@ -28,7 +28,8 @@ exports.obtenerReservas = (req, res) => {
 
     //filtros de búsqueda
     if (hotel) result = result.filter(r => r.hotel === hotel);
-    if (fecha_inicio && fecha_fin) result = result.filter(r => r.fechaInicio >= fecha_inicio && r.fechaFin <= fecha_fin);
+    if (fecha_inicio && fecha_fin) result = result.filter(r => r.fechaInicio >= fecha_inicio && r.fechaFin <= fecha_fin)
+        else (res.status(400).send('Faltan datos'));
     if (tipo_habitacion) result = result.filter(r => r.tipoHabitacion === tipo_habitacion);
     if (estado) result = result.filter(r => r.estado === estado);
     if (num_huespedes) result = result.filter(r => r.numHuespedes === parseInt(num_huespedes));
