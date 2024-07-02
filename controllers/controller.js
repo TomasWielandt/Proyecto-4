@@ -1,11 +1,14 @@
 //se crea array vacio para almacenar las reservas
 let reservas = [];
 
+//contador global para Id
+let currentId = 1;
+
 //se crea y exporta la función crearReserva
 exports.crearReserva = (req, res) => {
     const { hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes } = req.body;
     const nuevaReserva = {
-        id: reservas.length + 1,
+        id: currentId++,
         hotel,
         fechaInicio,
         fechaFin,
