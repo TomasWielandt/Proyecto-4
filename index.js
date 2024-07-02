@@ -1,7 +1,7 @@
 //se importan express, dotenv y userRoutes
 const express = require("express");
 const dotenv = require("dotenv");
-const reservasRoutes = require("./routes/reservasRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 //se cargan las variables del archivo .env
 dotenv.config();
@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json())
 
 //se define las rutas
-app.use('/api/reservas', reservasRoutes);
+app.use('/api/reservas', userRoutes);
 
 //middleware de manejo de error 404
 app.use((req, res, next) => {
