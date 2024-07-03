@@ -15,6 +15,9 @@ const port = process.env.PORT || 3000;
 //se añade el middleware para parsear el cuerpo JSON de las solicitudes
 app.use(express.json());
 
+//middleware para analizar las solicitudes entrantes
+app.use(express.urlencoded({ extended: true }));
+
 //se define las rutas
 app.use('/api/reservas', userRoutes);
 
