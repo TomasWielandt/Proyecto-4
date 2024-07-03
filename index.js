@@ -3,6 +3,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 
+//se importa configuración de swagger
+const swaggerSetup = require('./swagger');
+
 //se cargan las variables del archivo .env
 dotenv.config();
 
@@ -22,9 +25,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/reservas', userRoutes);
 
 //middleware de manejo de error 404
-app.use((req, res, next) => {
-    res.status(404).send('Página no encontrada');
-});
+// app.use((req, res, next) => {
+//     res.status(404).send('Página no encontrada');
+// });
+
+//se llama a la configuración de swagger
+swaggerSetup(app);
 
 //se inicia el servidor en el puerto definido
 app.listen(port, () => {
