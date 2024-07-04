@@ -21,6 +21,11 @@ app.use(express.json());
 //middleware para analizar las solicitudes entrantes
 app.use(express.urlencoded({ extended: true }));
 
+//ruta raíz
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la API de Gestión de Reservas de Hotel');
+});
+
 //se define las rutas
 app.use('/api/reservas', userRoutes);
 
