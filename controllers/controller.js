@@ -4,22 +4,10 @@ const Reserva = require('../models/reserva');
 //se crea array vacio para almacenar las reservas
 let reservas = [];
 
-// //contador global para Id
-// let currentId = 1;
-
 //se crea y exporta la función crearReserva
 exports.crearReserva = (req, res) => {
     const { hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes } = req.body;
     const nuevaReserva = new Reserva({ hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes });
-    // {
-    //     id: currentId++,
-    //     hotel,
-    //     fechaInicio,
-    //     fechaFin,
-    //     tipoHabitacion,
-    //     estado,
-    //     numHuespedes,
-    // };
 
     //la nueva reserva se agrega al array reservas
     reservas.push(nuevaReserva);
@@ -87,13 +75,6 @@ exports.actualizarReserva = (req, res) => {
 
 //se crea y exporta la función eliminarReserva
 exports.eliminarReserva = (req, res) => {
-
-    // //se filtra las reservas para eliminar una reserva en especifico según su id
-    // reservas = reservas.filter(r => r.id !== parseInt(req.params.id));
-
-    // //se envía una respuesta indicando que la reserva a sido eliminada
-    // res.send(`Reserva con ID ${req.params.id} eliminada.`);
-
     const id = parseInt(req.params.id);
 
     //verificar si la reserva existe antes de eliminarla

@@ -35,11 +35,6 @@ app.get('/', (req, res) => {
 //se define las rutas
 app.use('/api/reservas', userRoutes);
 
-//middleware de manejo de error 404
-// app.use((req, res, next) => {
-//     res.status(404).send('Página no encontrada');
-// });
-
 //se llama a la configuración de swagger
 swaggerSetup(app);
 
