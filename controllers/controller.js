@@ -1,21 +1,25 @@
+//se importa la clase Reserva
+const Reserva = require('../models/reserva');
+
 //se crea array vacio para almacenar las reservas
 let reservas = [];
 
-//contador global para Id
-let currentId = 1;
+// //contador global para Id
+// let currentId = 1;
 
 //se crea y exporta la función crearReserva
 exports.crearReserva = (req, res) => {
     const { hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes } = req.body;
-    const nuevaReserva = {
-        id: currentId++,
-        hotel,
-        fechaInicio,
-        fechaFin,
-        tipoHabitacion,
-        estado,
-        numHuespedes,
-    };
+    const nuevaReserva = new Reserva({ hotel, fechaInicio, fechaFin, tipoHabitacion, estado, numHuespedes });
+    // {
+    //     id: currentId++,
+    //     hotel,
+    //     fechaInicio,
+    //     fechaFin,
+    //     tipoHabitacion,
+    //     estado,
+    //     numHuespedes,
+    // };
 
     //la nueva reserva se agrega al array reservas
     reservas.push(nuevaReserva);
@@ -84,9 +88,25 @@ exports.actualizarReserva = (req, res) => {
 //se crea y exporta la función eliminarReserva
 exports.eliminarReserva = (req, res) => {
 
-    //se filtra las reservas para eliminar una reserva en especifico según su id
-    reservas = reservas.filter(r => r.id !== parseInt(req.params.id));
+    // //se filtra las reservas para eliminar una reserva en especifico según su id
+    // reservas = reservas.filter(r => r.id !== parseInt(req.params.id));
 
-    //se envía una respuesta indicando que la reserva a sido eliminada
-    res.send(`Reserva con ID ${req.params.id} eliminada.`);
+    // //se envía una respuesta indicando que la reserva a sido eliminada
+    // res.send(`Reserva con ID ${req.params.id} eliminada.`);
+
+    const id = parseInt(req.params.id);
+
+    //verificar si la reserva existe antes de eliminarla
+    const reservaIndex = reservas.findIndex(r => r.id === id);
+
+    if (reservaIndex === -1) {
+        //si no se encuentra la reserva, responder con un código 404
+        return res.status(404).send(`Reserva con ID ${id} no encontrada.`);
+    }
+
+    //eliminar la reserva del array
+    reservas.splice(reservaIndex, 1);
+
+    //se envía una respuesta indicando que la reserva ha sido eliminada
+    res.send(`Reserva con ID ${id} eliminada.`);  
 };

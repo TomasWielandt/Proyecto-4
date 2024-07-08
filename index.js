@@ -1,6 +1,9 @@
-//se importan express, dotenv y userRoutes
+//se importan express, dotenv y cors 
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
+
+//se importa userRoutes
 const userRoutes = require("./routes/userRoutes");
 
 //se importa configuración de swagger
@@ -20,6 +23,9 @@ app.use(express.json());
 
 //middleware para analizar las solicitudes entrantes
 app.use(express.urlencoded({ extended: true }));
+
+//middleware de cors
+app.use(cors());
 
 //ruta raíz
 app.get('/', (req, res) => {
