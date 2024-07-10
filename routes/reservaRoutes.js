@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 //importación del controlador
-const controller = require('../controllers/controller');
+const controller = require('../controllers/reservaController');
 
 //definición de rutas
 /**

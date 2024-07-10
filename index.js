@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 //se importa userRoutes
-const userRoutes = require("./routes/userRoutes");
+const routes = require("./routes/reservaRoutes");
 
 //se importa configuración de swagger
 const swaggerSetup = require('./swagger');
@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
 });
 
 //se define las rutas
-app.use('/api/reservas', userRoutes);
+app.use('/api/reservas', routes);
 
 //se llama a la configuración de swagger
 swaggerSetup(app);
