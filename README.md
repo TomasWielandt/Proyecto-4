@@ -555,5 +555,5 @@ module.exports = Reserva;
 
 ## Contacto
 
-Tomás Wielandt
+Tomás Wielandt<br>
 twielandt16@gmail.com
