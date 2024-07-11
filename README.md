@@ -21,19 +21,18 @@ Características del proyecto:
 - Contar con un archivo .env para las variables de entorno, en el cual se establecerá el puerto.
 - Contar con un archivo .gitignore que incluya las carpetas y archivos que deberán ocultarse para el repositorio.
 - Usar una arquitectura de carpetas clara como se muestra a continuación. Se puede agregar más archivos, rutas, controladores o, si se prefiere, sintetizar. La idea es que la asignación de responsabilidades del código pueda ser ubicado fácilmente.
-`
+- 
 EJEMPLO_TU_PROYECTO
-├─ .env
-├─ .prettierrc
-├─ README.md
-├─ controllers
-│  └─ TU_CONTROLADOR.js
-├─ package-lock.json
-├─ package.json
-├─ routes
-│  └─ TU_RUTA.js
-└─ server.js  <- TU ARCHIVO DE ENTRADA
-`
+├── .env
+├── .prettierrc
+├── README.md
+├── controllers
+│   └── TU_CONTROLADOR.js
+├── package-lock.json
+├── package.json
+├── routes
+│   └── TU_RUTA.js
+└── server.js  <- TU ARCHIVO DE ENTRADA
 
 - Implementar los siguientes 10 endpoints.
 
@@ -113,22 +112,21 @@ Se accederá a la interfaz de Swagger.
 ## Detalles de la implementación
 
 - Definición de arquitectura de carpetas.
-`
-├─ proyecto-4
-│ ├─ controllers
-│ │ └─ reservaController.js
-│ ├─ models
-│ │ └─ reserva.js
-│ ├─ node_modules
-│ ├─ routes
-│ │ └─ reservaRoutes.js
-│ ├─ .env
-│ ├─ .gitignore
-│ ├─ index.js
-│ ├─ package-lock.json
-│ ├─ package.json
-│ ├─ swagger.js
-`
+
+├── proyecto-4
+│   ├── controllers
+│   │   └── reservaController.js
+│   ├── models
+│   │   └── reserva.js
+│   ├── node_modules
+│   ├── routes
+│   │   └── reservaRoutes.js
+│   ├── .env
+│   ├── .gitignore
+│   ├── index.js
+│   ├── package-lock.json
+│   ├── package.json
+│   └── swagger.js
 
 - Instalación de dependencias:
 
