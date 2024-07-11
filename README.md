@@ -22,20 +22,7 @@ Características del proyecto:
 - Contar con un archivo .gitignore que incluya las carpetas y archivos que deberán ocultarse para el repositorio.
 - Usar una arquitectura de carpetas clara como se muestra a continuación. Se puede agregar más archivos, rutas, controladores o, si se prefiere, sintetizar. La idea es que la asignación de responsabilidades del código pueda ser ubicado fácilmente.
 
-    ├─ proyecto-4
-    │ ├─ controllers
-    │ │ └─ reservaController.js
-    │ ├─ models
-    │ │ └─ reserva.js
-    │ ├─ node_modules
-    │ ├─ routes
-    │ │ └─ reservaRoutes.js
-    │ ├─ .env
-    │ ├─ .gitignore
-    │ ├─ index.js
-    │ ├─ package-lock.json
-    │ ├─ package.json
-    │ ├─ swagger.js
+[![arquitectura-Ej.png](https://i.postimg.cc/yWCNGsMD/arquitectura-Ej.png)](https://postimg.cc/5Qp1YdNJ)
 
 - Implementar los siguientes 10 endpoints.
 
@@ -116,20 +103,7 @@ Se accederá a la interfaz de Swagger.
 
 - Definición de arquitectura de carpetas.
 
-├── proyecto-4
-│   ├── controllers
-│   │   └── reservaController.js
-│   ├── models
-│   │   └── reserva.js
-│   ├── node_modules
-│   ├── routes
-│   │   └── reservaRoutes.js
-│   ├── .env
-│   ├── .gitignore
-│   ├── index.js
-│   ├── package-lock.json
-│   ├── package.json
-│   └── swagger.js
+[![arquitectura.png](https://i.postimg.cc/qM2XQGS7/arquitectura.png)](https://postimg.cc/qzM3v2kf)
 
 - Instalación de dependencias:
 
